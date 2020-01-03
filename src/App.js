@@ -1,28 +1,18 @@
 import React from "react";
 import "./App.css";
 
-// function App() {
-//   return (
-//     <React.Fragment>
-//       <label htmlFor="bar">bar</label>
-//       <input type="text" onChange={() => {console.log("I am clicked")}}/>
-//     </React.Fragment>
-//   )
-// }
 
 const App = () => {
   return (
-    <div>
-      <Cat />
-      <Cat />
-      <Cat />
-      <Cat />
-    </div>
+    <React.Fragment>
+      <User name={"Taro"} age={20}/>
+      <User name={"Jiro"} age={15}/>
+    </React.Fragment>
   );
 };
 
-const Cat = () => {
-  return <div>Meow!</div>;
+const User = (props) => {
+return <div>I am {props.name}, {props.age} years old.</div>;
 };
 
 export default App;
