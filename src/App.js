@@ -1,18 +1,34 @@
-import React from "react";
+import React, { Component } from "react";
 import "./App.css";
 
 
-const App = () => {
-  return (
-    <React.Fragment>
-      <User name={"Taro"} age={20}/>
-      <User name={"Jiro"} age={15}/>
-    </React.Fragment>
-  );
-};
+const App = () => (<Counter></Counter>)
 
-const User = (props) => {
-return <div>I am {props.name}, {props.age} years old.</div>;
+class Counter extends Component {
+  constructor(props) {
+    super(props)
+    console.log(this.state)
+    this.state = {count: 0}
+  }
+
+  handlePlusButton = () => {
+    //this.state = {count: this.state.count + 1}
+    this.setState({count: this.state.count + 1});
+  }
+
+  handleMinusButton = () => {
+    this.setState({count: this.state.count - 1});
+  }
+
+  render() {
+    return (
+      <React.Fragment>
+        <div>count: {this.state.count}</div>
+        <button onClick={this.handlePlusButton}>+1</button>
+        <button onClick={this.handleMinusButton}>-1</button>
+      </React.Fragment>
+    )
+  }
 };
 
 export default App;
