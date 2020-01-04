@@ -8,5 +8,3 @@ export const incremnet = () => ({
 export const decrement = () => ({
     type: 'DECREMENT'
 })
-
-:
